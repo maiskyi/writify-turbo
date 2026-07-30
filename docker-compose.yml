@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  writify_database:
+    image: postgres:17
+    container_name: writify-database
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: writify
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./.data/writify-database:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

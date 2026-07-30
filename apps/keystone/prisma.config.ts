@@ -6,6 +6,6 @@ export default defineConfig({
     path: 'migrations',
   },
   datasource: {
-    url: 'file:./keystone.db',
+    url: process.env.WRITIFY_DATABASE_URL!
   },
 })

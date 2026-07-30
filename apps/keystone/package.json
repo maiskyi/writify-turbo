@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "private": true,
   "scripts": {
-    "dev": "keystone dev",
+    "dev": "env-cmd keystone dev",
     "start": "keystone start",
     "build": "keystone build"
   },
@@ -12,12 +12,16 @@
     "@keystone-6/core": "^8.0.0",
     "@keystone-6/fields-document": "^11.0.0",
     "@prisma/adapter-better-sqlite3": "^7.9.0",
+    "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.0",
+    "better-sqlite3": "^12.6.0",
     "next": "^16.2.10",
+    "prisma": "^7.9.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "prisma": "^7.9.0",
-    "typescript": "^6.0.0",
-    "better-sqlite3": "^12.6.0"
+    "typescript": "^6.0.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^11.0.0"
   }
 }
