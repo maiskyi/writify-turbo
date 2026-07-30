@@ -13,5 +13,17 @@ services:
     volumes:
       - ./.data/writify-database:/var/lib/postgresql/data
 
+  strapi_database:
+    image: postgres:17
+    container_name: strapi-database
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: strapi
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./.data/strapi-database:/var/lib/postgresql/data
+
 volumes:
   postgres_data:
