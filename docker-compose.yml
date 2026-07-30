@@ -25,5 +25,17 @@ services:
     volumes:
       - ./.data/strapi-database:/var/lib/postgresql/data
 
+  # Proxies *.writify.localhost → host apps (no /etc/hosts needed)
+  proxy:
+    image: caddy:2-alpine
+    container_name: writify-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
 volumes:
   postgres_data:

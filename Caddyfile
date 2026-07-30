@@ -1,0 +1,13 @@
+# Local reverse proxy → apps on the host (Docker Desktop: host.docker.internal)
+# *.localhost resolves to 127.0.0.1 without /etc/hosts (RFC 6761)
+http://cms.writify.localhost {
+	reverse_proxy host.docker.internal:3002
+}
+
+http://admin.writify.localhost {
+	reverse_proxy host.docker.internal:3000
+}
+
+http://app.writify.localhost {
+	reverse_proxy host.docker.internal:3001
+}
